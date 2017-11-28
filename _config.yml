@@ -1,1 +1,35 @@
-theme: jekyll-theme-cayman
+title: Hello, world! I'm MengQiu
+description: > # this means to ignore newlines until "baseurl:"
+    没有比脚长的路！
+permalink: ':title/'
+baseurl: "/flexible-jekyll" # the subpath of your site, e.g. /blog
+url: "https://blackblackline.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+site-twitter: #if your site has a twitter account, enter it here
+
+# Author Settings
+author: MengQiu # add your name
+author-img: MengQiu.jpg # add your photo
+about-author: 一个不正经的正经程序猿.  # add description
+#twitter: # add your Twitter handle
+facebook: # add your Facebook handle
+github: blackblackline # add your Github handle
+#linkedin: # add your Linkedin handle
+email: blackblackline@163.com # add your Email address
+
+# Disqus
+discus-identifier: mr-brown # add your discus identifier
+
+# Tracker
+analytics: # Google Analytics
+
+# Build Settings
+markdown: kramdown
+plugins_dir:
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jemoji
+
+paginate: 8
+paginate_path: "/page/:num"
+
+exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
