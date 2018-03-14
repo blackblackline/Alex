@@ -21,23 +21,23 @@ tags: [JAVA, Software] # add tag
 ![Macbook]({{site.baseurl}}/assets/img/wsdl2.jpg)
 * 生成源码之后，调用代码如下   
 
->//创建服务视图
-WeatherWebService weatherWebService = new WeatherWebService();  
-//通过服务视图得到服务端点
-WeatherWebServiceSoap weatherWebServiceSoap = weatherWebService.getWeatherWebServiceSoap();  
-//调用webservice服务方法
+>//创建服务视图. 
+WeatherWebService weatherWebService = new WeatherWebService();    
+//通过服务视图得到服务端点. 
+WeatherWebServiceSoap weatherWebServiceSoap = weatherWebService.getWeatherWebServiceSoap();   
+//调用webservice服务方法.  
 ArrayOfString arrayOfString = weatherWebServiceSoap.getWeatherbyCityName("宁波");    
 
 * 由于不同环境下wsdl地址不同，因此笔者需要做到wsdl文件可配置化。笔者浏览了一下生成的元源码，在其中一个service类中找到了线索。生成的服务类提供了多种有参构造器，其中就包含了传入Url的有参构造器。因此笔者就可以通过不同环境配置拿到不同WSDL服务地址，不需要去修改代码。实现代码如下：    
 
->URL url = new URL("http://www.webxml.com.cn/WebServices/WeatherWebService.asmx");  
-//创建service
+>URL url = new URL("http://www.webxml.com.cn/WebServices/WeatherWebService.asmx");    
+//创建service. 
 Service service = Service.create(url);  
-//创建porttype
+//创建porttype. 
 WeatherWebService weatherWebService = service.getPort(WeatherWebService.class);  
-//通过服务视图得到服务端点
+//通过服务视图得到服务端点. 
 WeatherWebServiceSoap weatherWebServiceSoap = weatherWebService.getWeatherWebServiceSoap();  
-//调用webservice服务方法
+//调用webservice服务方法    
 ArrayOfString arrayOfString = weatherWebServiceSoap.getWeatherbyCityName("郑州");     
 
 其中创建URL对象时，传入的URL串笔者是通过`@Value`注解拿到配置文件中的值并传入。
