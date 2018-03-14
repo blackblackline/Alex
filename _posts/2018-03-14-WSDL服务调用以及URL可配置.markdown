@@ -1,12 +1,12 @@
 ---
 layout: post
-title: WebServiceClient-URL-可配置
+title: WebServiceClient URL 可配置
 date: 2018-03-14 00:00:00 +0300
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 img: how-to-start.jpg # Add image post (optional)
 tags: [JAVA, Software] # add tag
 ---
-在实际项目开发过程中，经常性需要调用第三方提供的接口，WebService接口就是比较常见的一种。在实际项目开发过程中，经常性需要调用第三方提供的接口，WebService接口就是比较常见的一种。在实际项目开发过程中，经常性需要调用第三方提供的接口，WebService接口就是比较常见的一种。
+在实际项目开发过程中，经常性需要调用第三方提供的接口，WebService接口就是比较常见的一种。
 最近笔者也遇到了调用第三方的webservice接口的情况，那么接下来就跟大家分享一下的使用过程以及如何实现URL可配置化。   
 
 首先，我们需要拿到第三方接口服务路径。通常会提供一个链接，如下：
